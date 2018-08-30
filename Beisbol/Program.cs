@@ -17,6 +17,14 @@ namespace Beisbol
             equipo1.Nombre = "Black Team";
             equipo1.Ciudad = "Saxony";
             equipo1.Entrenador = "Gunter";
+
+            equipo1.estadio = new Estadio();
+            equipo1.estadio.Nombre = "Arena";
+            equipo1.estadio.Direccion = "Atras del Palacio Municipal";
+            equipo1.estadio.Capacidad= 2000;
+
+
+
             equipo1.Jugadores.Add(new Jugador("Adrian"));
             equipo1.Jugadores.Add(new Jugador("Rodrigo"));
             equipo1.Jugadores.Add(new Jugador("Alan"));
@@ -28,6 +36,9 @@ namespace Beisbol
             equipo2.Nombre = "Red Team";
             equipo2.Ciudad = "Rusviet";
             equipo2.Entrenador = "Olga";
+
+          
+
             equipo2.Jugadores.Add(new Jugador("Omar"));        //AGRGAR DATO A LISTA DE JUGADORES
             equipo2.Jugadores.Add(new Jugador("José"));
             equipo2.Jugadores.Add(new Jugador("Oswald"));
@@ -40,6 +51,16 @@ namespace Beisbol
                 Console.WriteLine("Nombre: " + equipo.Nombre);
                 Console.WriteLine("Ciudad: " + equipo.Ciudad);
                 Console.WriteLine("Entrenador: " + equipo.Entrenador);
+
+                if(equipo.estadio != null) {
+                    Console.WriteLine("-----------");
+                    Console.WriteLine("Estadio: " + equipo.estadio.Nombre);
+                    Console.WriteLine("Direccion: " + equipo.estadio.Direccion);
+                    Console.WriteLine("Capacidad: " + equipo.estadio.Capacidad);
+                    Console.WriteLine("-----------");
+                }
+                else { Console.WriteLine("---Sin Estadio---"); }
+
                 foreach (Jugador jugador in equipo.Jugadores)
                 {
                     Console.WriteLine("Jugador: " + jugador.Nombre);
